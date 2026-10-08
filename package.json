@@ -1,0 +1,37 @@
+{
+  "name": "fleetcare-frontend",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "server": "json-server --watch server/db.json --routes server/routes.json --port 3000",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "postinstall": "prettier --write .",
+    "verify": "npm run static:check && npm run format:check && npm run build",
+    "static:check": "node scripts-static-check.mjs"
+  },
+  "dependencies": {
+    "@primeuix/themes": "^2.0.3",
+    "axios": "^1.16.0",
+    "pinia": "^3.0.4",
+    "primeflex": "^4.0.0",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.5.5",
+    "vue": "^3.5.32",
+    "vue-i18n": "^11.4.2",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.6",
+    "json-server": "^0.17.4",
+    "prettier": "^3.6.2",
+    "vite": "^8.0.8"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

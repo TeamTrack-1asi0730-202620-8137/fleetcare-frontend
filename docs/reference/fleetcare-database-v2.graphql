@@ -1,0 +1,288 @@
+# =========================================================
+# FleetCare Database Model
+# =========================================================
+# Naming:
+# - Tables/entities in singular and English
+# - Relationships kept only when functionally necessary
+# - MaintenanceType removed as a separate table
+# =========================================================
+
+
+# =========================================================
+# User Access and Roles
+# =========================================================
+
+type Fleet {
+  id: ID! @id
+  name: String! @db.VarChar(150)
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  userAccountList: [UserAccount!]!
+  vehicleList: [Vehicle!]!
+}
+
+type Role {
+  id: ID! @id
+  name: String! @db.VarChar(50)
+  description: String @db.VarChar(255)
+
+  userAccountList: [UserAccount!]!
+}
+
+type UserAccount {
+  id: ID! @id
+  fleetId: ID!
+  roleId: ID!
+  firstName: String! @db.VarChar(100)
+  lastName: String! @db.VarChar(100)
+  email: String! @db.VarChar(255) @unique
+  passwordHash: String! @db.VarChar(255)
+  isActive: Boolean!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  fleet: Fleet
+  role: Role
+
+  passwordResetTokenList: [PasswordResetToken!]!
+  inspectionList: [Inspection!]!
+  incidentList: [Incident!]!
+  mileageRecordList: [MileageRecord!]!
+  fuelRecordList: [FuelRecord!]!
+}
+
+type PasswordResetToken {
+  id: ID! @id
+  userId: ID!
+  token: String! @db.VarChar(255)
+  expiresAt: DateTime!
+  usedAt: DateTime
+  createdAt: DateTime!
+
+  user: UserAccount
+}
+
+
+# =========================================================
+# Fleet Management
+# =========================================================
+
+type Vehicle {
+  id: ID! @id
+  fleetId: ID!
+  plateNumber: String! @db.VarChar(20) @unique
+  brand: String! @db.VarChar(100)
+  model: String! @db.VarChar(100)
+  year: Int!
+  vin: String @db.VarChar(50)
+  status: String! @db.VarChar(30)
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  fleet: Fleet
+
+  inspectionList: [Inspection!]!
+  incidentList: [Incident!]!
+  maintenancePlanList: [MaintenancePlan!]!
+  maintenanceRecordList: [MaintenanceRecord!]!
+  mileageRecordList: [MileageRecord!]!
+  fuelRecordList: [FuelRecord!]!
+}
+
+
+# =========================================================
+# Inspection Management
+# =========================================================
+
+type Checklist {
+  id: ID! @id
+  name: String! @db.VarChar(150)
+  description: String @db.VarChar(500)
+  isActive: Boolean!
+  createdAt: DateTime!
+
+  checklistItemList: [ChecklistItem!]!
+  inspectionList: [Inspection!]!
+}
+
+type ChecklistItem {
+  id: ID! @id
+  checklistId: ID!
+  description: String! @db.VarChar(500)
+  sortOrder: Int!
+  isRequired: Boolean!
+
+  checklist: Checklist
+  inspectionResultList: [InspectionResult!]!
+}
+
+type Inspection {
+  id: ID! @id
+  vehicleId: ID!
+  checklistId: ID!
+  driverId: ID!
+  inspectionDate: DateTime!
+  status: String! @db.VarChar(30)
+  observation: String @db.VarChar(1000)
+  createdAt: DateTime!
+  completedAt: DateTime
+
+  vehicle: Vehicle
+  checklist: Checklist
+  driver: UserAccount
+
+  inspectionResultList: [InspectionResult!]!
+  inspectionEvidenceList: [InspectionEvidence!]!
+  incidentList: [Incident!]!
+}
+
+type InspectionResult {
+  id: ID! @id
+  inspectionId: ID!
+  checklistItemId: ID!
+  result: String! @db.VarChar(30)
+  observation: String @db.VarChar(1000)
+
+  inspection: Inspection
+  checklistItem: ChecklistItem
+}
+
+type InspectionEvidence {
+  id: ID! @id
+  inspectionId: ID!
+  fileUrl: String! @db.VarChar(1000)
+  description: String @db.VarChar(500)
+  createdAt: DateTime!
+
+  inspection: Inspection
+}
+
+
+# =========================================================
+# Incident Management
+# =========================================================
+
+type Incident {
+  id: ID! @id
+  vehicleId: ID!
+  reportedByUserId: ID!
+  sourceInspectionId: ID
+
+  title: String! @db.VarChar(200)
+  description: String! @db.VarChar(2000)
+  status: String! @db.VarChar(30)
+
+  latitude: Float
+  longitude: Float
+  address: String @db.VarChar(500)
+
+  reportedAt: DateTime!
+  resolvedAt: DateTime
+  resolution: String @db.VarChar(2000)
+
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  vehicle: Vehicle
+  reportedByUser: UserAccount
+  sourceInspection: Inspection
+
+  incidentEvidenceList: [IncidentEvidence!]!
+  maintenancePlanList: [MaintenancePlan!]!
+}
+
+type IncidentEvidence {
+  id: ID! @id
+  incidentId: ID!
+  fileUrl: String! @db.VarChar(1000)
+  description: String @db.VarChar(500)
+  createdAt: DateTime!
+
+  incident: Incident
+}
+
+
+# =========================================================
+# Maintenance Management
+# =========================================================
+
+type MaintenancePlan {
+  id: ID! @id
+  vehicleId: ID!
+  relatedIncidentId: ID
+
+  maintenanceType: String! @db.VarChar(100)
+  scheduledDate: Date
+  targetMileage: Float
+  status: String! @db.VarChar(30)
+  notes: String @db.VarChar(1000)
+
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  vehicle: Vehicle
+  relatedIncident: Incident
+
+  maintenanceRecord: MaintenanceRecord
+}
+
+type MaintenanceRecord {
+  id: ID! @id
+  maintenancePlanId: ID
+  vehicleId: ID!
+
+  maintenanceType: String! @db.VarChar(100)
+  performedDate: Date!
+  mileage: Float!
+  workDescription: String! @db.VarChar(2000)
+  totalCost: Float!
+  notes: String @db.VarChar(1000)
+  createdAt: DateTime!
+
+  maintenancePlan: MaintenancePlan
+  vehicle: Vehicle
+
+  maintenancePartList: [MaintenancePart!]!
+}
+
+type MaintenancePart {
+  id: ID! @id
+  maintenanceRecordId: ID!
+  name: String! @db.VarChar(150)
+  quantity: Int!
+  unitCost: Float!
+
+  maintenanceRecord: MaintenanceRecord
+}
+
+
+# =========================================================
+# Vehicle Operations Management
+# =========================================================
+
+type MileageRecord {
+  id: ID! @id
+  vehicleId: ID!
+  registeredByUserId: ID!
+  mileage: Float!
+  recordedAt: DateTime!
+  createdAt: DateTime!
+
+  vehicle: Vehicle
+  registeredByUser: UserAccount
+}
+
+type FuelRecord {
+  id: ID! @id
+  vehicleId: ID!
+  registeredByUserId: ID!
+  mileage: Float!
+  liters: Float!
+  totalCost: Float!
+  fueledAt: DateTime!
+  createdAt: DateTime!
+
+  vehicle: Vehicle
+  registeredByUser: UserAccount
+}

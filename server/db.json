@@ -1,0 +1,1906 @@
+{
+  "fleets": [
+    {
+      "id": 1,
+      "name": "Distribuciones Lima Centro",
+      "createdAt": "2026-01-15T09:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "name": "juanorosco59",
+      "createdAt": "2026-10-08T21:52:12.347Z",
+      "updatedAt": "2026-10-08T21:52:12.347Z",
+      "id": 2
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "fleet_manager",
+      "description": "Jefe de flota"
+    },
+    {
+      "id": 2,
+      "name": "driver",
+      "description": "Conductor"
+    }
+  ],
+  "userAccounts": [
+    {
+      "id": 1,
+      "fleetId": 1,
+      "roleId": 1,
+      "firstName": "Carlos",
+      "lastName": "Gutiérrez",
+      "email": "carlos@fleetcare.local",
+      "passwordHash": "FleetCare123!",
+      "isActive": true,
+      "createdAt": "2026-01-15T09:10:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 2,
+      "fleetId": 1,
+      "roleId": 2,
+      "firstName": "Luis",
+      "lastName": "Ramírez",
+      "email": "luis@fleetcare.local",
+      "passwordHash": "FleetCare123!",
+      "isActive": true,
+      "createdAt": "2026-01-15T09:20:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 3,
+      "fleetId": 1,
+      "roleId": 2,
+      "firstName": "Andrei",
+      "lastName": "Pérez",
+      "email": "andrei@fleetcare.local",
+      "passwordHash": "FleetCare123!",
+      "isActive": true,
+      "createdAt": "2026-01-15T09:30:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 4,
+      "fleetId": 1,
+      "roleId": 2,
+      "firstName": "Kevin",
+      "lastName": "López",
+      "email": "kevin@fleetcare.local",
+      "passwordHash": "FleetCare123!",
+      "isActive": true,
+      "createdAt": "2026-01-15T09:40:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "fleetId": 2,
+      "roleId": 1,
+      "firstName": "Juan",
+      "lastName": "Orosco",
+      "email": "u202414840@upc.edu.pe",
+      "passwordHash": "123456",
+      "isActive": true,
+      "createdAt": "2026-10-08T21:52:12.347Z",
+      "updatedAt": "2026-10-08T21:52:12.347Z",
+      "id": 5
+    }
+  ],
+  "passwordResetTokens": [],
+  "vehicles": [
+    {
+      "id": 1,
+      "fleetId": 1,
+      "plateNumber": "B7Q-421",
+      "brand": "Toyota",
+      "model": "Hilux",
+      "year": 2022,
+      "vin": "8AJHA3CD0N1234501",
+      "status": "available",
+      "createdAt": "2026-01-20T08:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 2,
+      "fleetId": 1,
+      "plateNumber": "C4M-238",
+      "brand": "Hyundai",
+      "model": "H100",
+      "year": 2021,
+      "vin": "KMFZBX7BLMU123502",
+      "status": "requires_attention",
+      "createdAt": "2026-01-20T08:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 3,
+      "fleetId": 1,
+      "plateNumber": "D9R-615",
+      "brand": "Kia",
+      "model": "K2500",
+      "year": 2023,
+      "vin": "KNCSHX74AP1234503",
+      "status": "available",
+      "createdAt": "2026-01-20T08:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 4,
+      "fleetId": 1,
+      "plateNumber": "F2T-804",
+      "brand": "Toyota",
+      "model": "Hiace",
+      "year": 2020,
+      "vin": "JTFSX22P2L1234504",
+      "status": "out_of_service",
+      "createdAt": "2026-01-20T08:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 5,
+      "fleetId": 1,
+      "plateNumber": "G6P-172",
+      "brand": "Nissan",
+      "model": "NP300",
+      "year": 2022,
+      "vin": "3N6CD33B6NK123505",
+      "status": "available",
+      "createdAt": "2026-01-20T08:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 6,
+      "fleetId": 1,
+      "plateNumber": "H3V-590",
+      "brand": "JAC",
+      "model": "X200",
+      "year": 2021,
+      "vin": "LJ11RABC1M1234506",
+      "status": "requires_attention",
+      "createdAt": "2026-01-20T08:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 7,
+      "fleetId": 1,
+      "plateNumber": "J8K-346",
+      "brand": "Chevrolet",
+      "model": "N300",
+      "year": 2020,
+      "vin": "KL1DA69A7LB123507",
+      "status": "available",
+      "createdAt": "2026-01-20T08:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 8,
+      "fleetId": 1,
+      "plateNumber": "K5S-913",
+      "brand": "Foton",
+      "model": "TM1",
+      "year": 2023,
+      "vin": "LVAV2JBB3P1234508",
+      "status": "available",
+      "createdAt": "2026-01-20T08:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 9,
+      "fleetId": 1,
+      "plateNumber": "L1W-257",
+      "brand": "Dongfeng",
+      "model": "C31",
+      "year": 2022,
+      "vin": "LGWDA6A52N1234509",
+      "status": "requires_attention",
+      "createdAt": "2026-01-20T08:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 10,
+      "fleetId": 1,
+      "plateNumber": "M4X-681",
+      "brand": "Renault",
+      "model": "Master",
+      "year": 2021,
+      "vin": "VF1MA0001M1234510",
+      "status": "available",
+      "createdAt": "2026-01-20T08:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 11,
+      "fleetId": 1,
+      "plateNumber": "N7A-435",
+      "brand": "Peugeot",
+      "model": "Partner",
+      "year": 2023,
+      "vin": "VF3GJYHZ3P1234511",
+      "status": "available",
+      "createdAt": "2026-01-20T08:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 12,
+      "fleetId": 1,
+      "plateNumber": "P2C-769",
+      "brand": "Maxus",
+      "model": "V80",
+      "year": 2020,
+      "vin": "LSKG4BL12L1234512",
+      "status": "out_of_service",
+      "createdAt": "2026-01-20T08:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    }
+  ],
+  "checklists": [
+    {
+      "id": 1,
+      "name": "Inspección preoperacional estándar",
+      "description": "Checklist previo a la salida a ruta para vehículos de carga ligera.",
+      "isActive": true,
+      "createdAt": "2026-01-15T10:00:00-05:00"
+    }
+  ],
+  "checklistItems": [
+    {
+      "id": 1,
+      "checklistId": 1,
+      "description": "Frenos",
+      "sortOrder": 1,
+      "isRequired": true
+    },
+    {
+      "id": 2,
+      "checklistId": 1,
+      "description": "Neumáticos y presión",
+      "sortOrder": 2,
+      "isRequired": true
+    },
+    {
+      "id": 3,
+      "checklistId": 1,
+      "description": "Luces y señalización",
+      "sortOrder": 3,
+      "isRequired": true
+    },
+    {
+      "id": 4,
+      "checklistId": 1,
+      "description": "Niveles de fluidos",
+      "sortOrder": 4,
+      "isRequired": true
+    },
+    {
+      "id": 5,
+      "checklistId": 1,
+      "description": "Carga y elementos de sujeción",
+      "sortOrder": 5,
+      "isRequired": true
+    },
+    {
+      "id": 6,
+      "checklistId": 1,
+      "description": "Estado general visible",
+      "sortOrder": 6,
+      "isRequired": true
+    }
+  ],
+  "inspections": [
+    {
+      "id": 1,
+      "vehicleId": 1,
+      "checklistId": 1,
+      "driverId": 2,
+      "inspectionDate": "2026-10-08T06:40:00-05:00",
+      "status": "compliant",
+      "observation": null,
+      "createdAt": "2026-10-08T06:40:00-05:00",
+      "completedAt": "2026-10-08T06:40:00-05:00"
+    },
+    {
+      "id": 2,
+      "vehicleId": 2,
+      "checklistId": 1,
+      "driverId": 3,
+      "inspectionDate": "2026-10-08T06:45:00-05:00",
+      "status": "non_compliant",
+      "observation": "Vibración leve al frenar.",
+      "createdAt": "2026-10-08T06:45:00-05:00",
+      "completedAt": "2026-10-08T06:45:00-05:00"
+    },
+    {
+      "id": 3,
+      "vehicleId": 3,
+      "checklistId": 1,
+      "driverId": 4,
+      "inspectionDate": "2026-10-08T06:50:00-05:00",
+      "status": "compliant",
+      "observation": null,
+      "createdAt": "2026-10-08T06:50:00-05:00",
+      "completedAt": "2026-10-08T06:50:00-05:00"
+    },
+    {
+      "id": 4,
+      "vehicleId": 4,
+      "checklistId": 1,
+      "driverId": 2,
+      "inspectionDate": "2026-10-07T06:35:00-05:00",
+      "status": "non_compliant",
+      "observation": "Fuga visible de refrigerante.",
+      "createdAt": "2026-10-07T06:35:00-05:00",
+      "completedAt": "2026-10-07T06:35:00-05:00"
+    },
+    {
+      "id": 5,
+      "vehicleId": 5,
+      "checklistId": 1,
+      "driverId": 3,
+      "inspectionDate": "2026-10-07T06:42:00-05:00",
+      "status": "compliant",
+      "observation": null,
+      "createdAt": "2026-10-07T06:42:00-05:00",
+      "completedAt": "2026-10-07T06:42:00-05:00"
+    },
+    {
+      "id": 6,
+      "vehicleId": 6,
+      "checklistId": 1,
+      "driverId": 4,
+      "inspectionDate": "2026-10-07T06:48:00-05:00",
+      "status": "non_compliant",
+      "observation": "Neumático delantero con desgaste irregular.",
+      "createdAt": "2026-10-07T06:48:00-05:00",
+      "completedAt": "2026-10-07T06:48:00-05:00"
+    },
+    {
+      "id": 7,
+      "vehicleId": 7,
+      "checklistId": 1,
+      "driverId": 2,
+      "inspectionDate": "2026-10-06T06:30:00-05:00",
+      "status": "compliant",
+      "observation": null,
+      "createdAt": "2026-10-06T06:30:00-05:00",
+      "completedAt": "2026-10-06T06:30:00-05:00"
+    },
+    {
+      "id": 8,
+      "vehicleId": 9,
+      "checklistId": 1,
+      "driverId": 3,
+      "inspectionDate": "2026-10-06T06:37:00-05:00",
+      "status": "non_compliant",
+      "observation": "Luz posterior derecha no enciende.",
+      "createdAt": "2026-10-06T06:37:00-05:00",
+      "completedAt": "2026-10-06T06:37:00-05:00"
+    },
+    {
+      "id": 9,
+      "vehicleId": 10,
+      "checklistId": 1,
+      "driverId": 4,
+      "inspectionDate": "2026-10-05T06:39:00-05:00",
+      "status": "compliant",
+      "observation": null,
+      "createdAt": "2026-10-05T06:39:00-05:00",
+      "completedAt": "2026-10-05T06:39:00-05:00"
+    },
+    {
+      "id": 10,
+      "vehicleId": 12,
+      "checklistId": 1,
+      "driverId": 2,
+      "inspectionDate": "2026-10-05T06:33:00-05:00",
+      "status": "non_compliant",
+      "observation": "Ruido anormal en el motor al ralentí.",
+      "createdAt": "2026-10-05T06:33:00-05:00",
+      "completedAt": "2026-10-05T06:33:00-05:00"
+    }
+  ],
+  "inspectionResults": [
+    {
+      "id": 1,
+      "inspectionId": 1,
+      "checklistItemId": 1,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 2,
+      "inspectionId": 1,
+      "checklistItemId": 2,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 3,
+      "inspectionId": 1,
+      "checklistItemId": 3,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 4,
+      "inspectionId": 1,
+      "checklistItemId": 4,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 5,
+      "inspectionId": 1,
+      "checklistItemId": 5,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 6,
+      "inspectionId": 1,
+      "checklistItemId": 6,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 7,
+      "inspectionId": 2,
+      "checklistItemId": 1,
+      "result": "non_compliant",
+      "observation": "Vibración leve al frenar."
+    },
+    {
+      "id": 8,
+      "inspectionId": 2,
+      "checklistItemId": 2,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 9,
+      "inspectionId": 2,
+      "checklistItemId": 3,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 10,
+      "inspectionId": 2,
+      "checklistItemId": 4,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 11,
+      "inspectionId": 2,
+      "checklistItemId": 5,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 12,
+      "inspectionId": 2,
+      "checklistItemId": 6,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 13,
+      "inspectionId": 3,
+      "checklistItemId": 1,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 14,
+      "inspectionId": 3,
+      "checklistItemId": 2,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 15,
+      "inspectionId": 3,
+      "checklistItemId": 3,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 16,
+      "inspectionId": 3,
+      "checklistItemId": 4,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 17,
+      "inspectionId": 3,
+      "checklistItemId": 5,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 18,
+      "inspectionId": 3,
+      "checklistItemId": 6,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 19,
+      "inspectionId": 4,
+      "checklistItemId": 1,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 20,
+      "inspectionId": 4,
+      "checklistItemId": 2,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 21,
+      "inspectionId": 4,
+      "checklistItemId": 3,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 22,
+      "inspectionId": 4,
+      "checklistItemId": 4,
+      "result": "non_compliant",
+      "observation": "Fuga visible de refrigerante."
+    },
+    {
+      "id": 23,
+      "inspectionId": 4,
+      "checklistItemId": 5,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 24,
+      "inspectionId": 4,
+      "checklistItemId": 6,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 25,
+      "inspectionId": 5,
+      "checklistItemId": 1,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 26,
+      "inspectionId": 5,
+      "checklistItemId": 2,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 27,
+      "inspectionId": 5,
+      "checklistItemId": 3,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 28,
+      "inspectionId": 5,
+      "checklistItemId": 4,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 29,
+      "inspectionId": 5,
+      "checklistItemId": 5,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 30,
+      "inspectionId": 5,
+      "checklistItemId": 6,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 31,
+      "inspectionId": 6,
+      "checklistItemId": 1,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 32,
+      "inspectionId": 6,
+      "checklistItemId": 2,
+      "result": "non_compliant",
+      "observation": "Neumático delantero con desgaste irregular."
+    },
+    {
+      "id": 33,
+      "inspectionId": 6,
+      "checklistItemId": 3,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 34,
+      "inspectionId": 6,
+      "checklistItemId": 4,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 35,
+      "inspectionId": 6,
+      "checklistItemId": 5,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 36,
+      "inspectionId": 6,
+      "checklistItemId": 6,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 37,
+      "inspectionId": 7,
+      "checklistItemId": 1,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 38,
+      "inspectionId": 7,
+      "checklistItemId": 2,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 39,
+      "inspectionId": 7,
+      "checklistItemId": 3,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 40,
+      "inspectionId": 7,
+      "checklistItemId": 4,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 41,
+      "inspectionId": 7,
+      "checklistItemId": 5,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 42,
+      "inspectionId": 7,
+      "checklistItemId": 6,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 43,
+      "inspectionId": 8,
+      "checklistItemId": 1,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 44,
+      "inspectionId": 8,
+      "checklistItemId": 2,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 45,
+      "inspectionId": 8,
+      "checklistItemId": 3,
+      "result": "non_compliant",
+      "observation": "Luz posterior derecha no enciende."
+    },
+    {
+      "id": 46,
+      "inspectionId": 8,
+      "checklistItemId": 4,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 47,
+      "inspectionId": 8,
+      "checklistItemId": 5,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 48,
+      "inspectionId": 8,
+      "checklistItemId": 6,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 49,
+      "inspectionId": 9,
+      "checklistItemId": 1,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 50,
+      "inspectionId": 9,
+      "checklistItemId": 2,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 51,
+      "inspectionId": 9,
+      "checklistItemId": 3,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 52,
+      "inspectionId": 9,
+      "checklistItemId": 4,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 53,
+      "inspectionId": 9,
+      "checklistItemId": 5,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 54,
+      "inspectionId": 9,
+      "checklistItemId": 6,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 55,
+      "inspectionId": 10,
+      "checklistItemId": 1,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 56,
+      "inspectionId": 10,
+      "checklistItemId": 2,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 57,
+      "inspectionId": 10,
+      "checklistItemId": 3,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 58,
+      "inspectionId": 10,
+      "checklistItemId": 4,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 59,
+      "inspectionId": 10,
+      "checklistItemId": 5,
+      "result": "compliant",
+      "observation": null
+    },
+    {
+      "id": 60,
+      "inspectionId": 10,
+      "checklistItemId": 6,
+      "result": "non_compliant",
+      "observation": "Ruido anormal en el motor al ralentí."
+    }
+  ],
+  "inspectionEvidences": [
+    {
+      "id": 1,
+      "inspectionId": 2,
+      "fileUrl": "evidence/inspection-2.jpg",
+      "description": "Evidencia de vibración/frenos",
+      "createdAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 2,
+      "inspectionId": 4,
+      "fileUrl": "evidence/inspection-4.jpg",
+      "description": "Evidencia de fuga de refrigerante",
+      "createdAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 3,
+      "inspectionId": 6,
+      "fileUrl": "evidence/inspection-6.jpg",
+      "description": "Desgaste irregular de neumático",
+      "createdAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 4,
+      "inspectionId": 8,
+      "fileUrl": "evidence/inspection-8.jpg",
+      "description": "Luz posterior fuera de servicio",
+      "createdAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 5,
+      "inspectionId": 10,
+      "fileUrl": "evidence/inspection-10.jpg",
+      "description": "Condición del motor",
+      "createdAt": "2026-10-08T10:00:00-05:00"
+    }
+  ],
+  "incidents": [
+    {
+      "id": 1,
+      "vehicleId": 2,
+      "reportedByUserId": 3,
+      "sourceInspectionId": 2,
+      "title": "Vibración al frenar",
+      "description": "Se percibe vibración en el pedal y volante durante el frenado.",
+      "status": "reported",
+      "latitude": -12.0875,
+      "longitude": -77.0461,
+      "address": "Av. Javier Prado, San Isidro, Lima",
+      "reportedAt": "2026-10-08T08:15:00-05:00",
+      "resolvedAt": null,
+      "resolution": null,
+      "createdAt": "2026-10-08T08:15:00-05:00",
+      "updatedAt": "2026-10-08T08:15:00-05:00"
+    },
+    {
+      "id": 2,
+      "vehicleId": 4,
+      "reportedByUserId": 2,
+      "sourceInspectionId": 4,
+      "title": "Fuga de refrigerante",
+      "description": "Se detectó fuga de refrigerante durante inspección previa.",
+      "status": "under_review",
+      "latitude": -12.0464,
+      "longitude": -77.0428,
+      "address": "Cercado de Lima, Lima",
+      "reportedAt": "2026-10-07T07:10:00-05:00",
+      "resolvedAt": null,
+      "resolution": null,
+      "createdAt": "2026-10-07T07:10:00-05:00",
+      "updatedAt": "2026-10-07T07:10:00-05:00"
+    },
+    {
+      "id": 3,
+      "vehicleId": 6,
+      "reportedByUserId": 4,
+      "sourceInspectionId": 6,
+      "title": "Desgaste de neumático",
+      "description": "Desgaste irregular en neumático delantero izquierdo.",
+      "status": "reported",
+      "latitude": -12.1111,
+      "longitude": -77.0316,
+      "address": "Miraflores, Lima",
+      "reportedAt": "2026-10-07T08:05:00-05:00",
+      "resolvedAt": null,
+      "resolution": null,
+      "createdAt": "2026-10-07T08:05:00-05:00",
+      "updatedAt": "2026-10-07T08:05:00-05:00"
+    },
+    {
+      "id": 4,
+      "vehicleId": 9,
+      "reportedByUserId": 3,
+      "sourceInspectionId": 8,
+      "title": "Falla de luz posterior",
+      "description": "Luz posterior derecha no enciende.",
+      "status": "resolved",
+      "latitude": -12.0631,
+      "longitude": -77.0365,
+      "address": "Jesús María, Lima",
+      "reportedAt": "2026-10-06T07:25:00-05:00",
+      "resolvedAt": "2026-10-06T15:30:00-05:00",
+      "resolution": "Se reemplazó foco posterior y se verificó el circuito.",
+      "createdAt": "2026-10-06T07:25:00-05:00",
+      "updatedAt": "2026-10-06T15:30:00-05:00"
+    },
+    {
+      "id": 5,
+      "vehicleId": 12,
+      "reportedByUserId": 2,
+      "sourceInspectionId": 10,
+      "title": "Ruido anormal de motor",
+      "description": "Ruido metálico intermitente al ralentí.",
+      "status": "under_review",
+      "latitude": -12.081,
+      "longitude": -77.082,
+      "address": "Magdalena del Mar, Lima",
+      "reportedAt": "2026-10-05T07:00:00-05:00",
+      "resolvedAt": null,
+      "resolution": null,
+      "createdAt": "2026-10-05T07:00:00-05:00",
+      "updatedAt": "2026-10-05T07:00:00-05:00"
+    }
+  ],
+  "incidentEvidences": [
+    {
+      "id": 1,
+      "incidentId": 1,
+      "fileUrl": "evidence/incident-1.jpg",
+      "description": "Foto del sistema de frenos",
+      "createdAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 2,
+      "incidentId": 2,
+      "fileUrl": "evidence/incident-2.jpg",
+      "description": "Fuga observada bajo el vehículo",
+      "createdAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 3,
+      "incidentId": 3,
+      "fileUrl": "evidence/incident-3.jpg",
+      "description": "Desgaste del neumático",
+      "createdAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 4,
+      "incidentId": 4,
+      "fileUrl": "evidence/incident-4.jpg",
+      "description": "Luz posterior",
+      "createdAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 5,
+      "incidentId": 5,
+      "fileUrl": "evidence/incident-5.jpg",
+      "description": "Compartimiento del motor",
+      "createdAt": "2026-10-08T10:00:00-05:00"
+    }
+  ],
+  "maintenancePlans": [
+    {
+      "id": 1,
+      "vehicleId": 1,
+      "relatedIncidentId": null,
+      "maintenanceType": "Cambio de aceite",
+      "scheduledDate": "2026-10-20",
+      "targetMileage": 50000,
+      "status": "upcoming",
+      "notes": "Servicio preventivo por kilometraje.",
+      "createdAt": "2026-09-01T09:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 2,
+      "vehicleId": 2,
+      "relatedIncidentId": 1,
+      "maintenanceType": "Revisión de sistema de frenos",
+      "scheduledDate": "2026-10-10",
+      "targetMileage": 62000,
+      "status": "upcoming",
+      "notes": "Revisar discos, pastillas y balanceo.",
+      "createdAt": "2026-09-01T09:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 3,
+      "vehicleId": 4,
+      "relatedIncidentId": 2,
+      "maintenanceType": "Revisión de sistema de refrigeración",
+      "scheduledDate": "2026-10-07",
+      "targetMileage": 88500,
+      "status": "overdue",
+      "notes": "Atender fuga reportada.",
+      "createdAt": "2026-09-01T09:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 4,
+      "vehicleId": 6,
+      "relatedIncidentId": 3,
+      "maintenanceType": "Rotación y cambio de neumáticos",
+      "scheduledDate": "2026-10-12",
+      "targetMileage": 56000,
+      "status": "upcoming",
+      "notes": "Atender desgaste irregular.",
+      "createdAt": "2026-09-01T09:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 5,
+      "vehicleId": 9,
+      "relatedIncidentId": 4,
+      "maintenanceType": "Revisión eléctrica",
+      "scheduledDate": "2026-10-06",
+      "targetMileage": 50000,
+      "status": "completed",
+      "notes": "Incidencia de luz posterior resuelta.",
+      "createdAt": "2026-09-01T09:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 6,
+      "vehicleId": 10,
+      "relatedIncidentId": null,
+      "maintenanceType": "Mantenimiento preventivo general",
+      "scheduledDate": "2026-11-05",
+      "targetMileage": 68000,
+      "status": "upcoming",
+      "notes": "Mantenimiento preventivo programado.",
+      "createdAt": "2026-09-01T09:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 7,
+      "vehicleId": 12,
+      "relatedIncidentId": 5,
+      "maintenanceType": "Diagnóstico de motor",
+      "scheduledDate": "2026-10-06",
+      "targetMileage": 94000,
+      "status": "overdue",
+      "notes": "Diagnóstico prioritario por ruido anormal.",
+      "createdAt": "2026-09-01T09:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    },
+    {
+      "id": 8,
+      "vehicleId": 5,
+      "relatedIncidentId": null,
+      "maintenanceType": "Cambio de filtros",
+      "scheduledDate": "2026-09-25",
+      "targetMileage": 43000,
+      "status": "completed",
+      "notes": "Servicio completado.",
+      "createdAt": "2026-09-01T09:00:00-05:00",
+      "updatedAt": "2026-10-08T10:00:00-05:00"
+    }
+  ],
+  "maintenanceRecords": [
+    {
+      "id": 1,
+      "maintenancePlanId": 5,
+      "vehicleId": 9,
+      "maintenanceType": "Revisión eléctrica",
+      "performedDate": "2026-10-06",
+      "mileage": 50120,
+      "workDescription": "Se reemplazó foco posterior derecho y se verificó cableado.",
+      "totalCost": 86.5,
+      "notes": "Sistema operativo y luces funcionales.",
+      "createdAt": "2026-10-06T14:00:00-05:00"
+    },
+    {
+      "id": 2,
+      "maintenancePlanId": 8,
+      "vehicleId": 5,
+      "maintenanceType": "Cambio de filtros",
+      "performedDate": "2026-09-25",
+      "mileage": 43180,
+      "workDescription": "Cambio de filtro de aceite y filtro de aire.",
+      "totalCost": 245,
+      "notes": "Servicio preventivo completado.",
+      "createdAt": "2026-09-25T14:00:00-05:00"
+    },
+    {
+      "id": 3,
+      "maintenancePlanId": null,
+      "vehicleId": 7,
+      "maintenanceType": "Cambio de aceite",
+      "performedDate": "2026-09-15",
+      "mileage": 71800,
+      "workDescription": "Cambio de aceite de motor y revisión de niveles.",
+      "totalCost": 310,
+      "notes": "Sin observaciones adicionales.",
+      "createdAt": "2026-09-15T14:00:00-05:00"
+    }
+  ],
+  "maintenanceParts": [
+    {
+      "id": 1,
+      "maintenanceRecordId": 1,
+      "name": "Foco posterior 12V",
+      "quantity": 1,
+      "unitCost": 32.5
+    },
+    {
+      "id": 2,
+      "maintenanceRecordId": 2,
+      "name": "Filtro de aceite",
+      "quantity": 1,
+      "unitCost": 65
+    },
+    {
+      "id": 3,
+      "maintenanceRecordId": 2,
+      "name": "Filtro de aire",
+      "quantity": 1,
+      "unitCost": 90
+    },
+    {
+      "id": 4,
+      "maintenanceRecordId": 3,
+      "name": "Aceite de motor 15W-40",
+      "quantity": 1,
+      "unitCost": 185
+    },
+    {
+      "id": 5,
+      "maintenanceRecordId": 3,
+      "name": "Filtro de aceite",
+      "quantity": 1,
+      "unitCost": 55
+    }
+  ],
+  "mileageRecords": [
+    {
+      "id": 1,
+      "vehicleId": 1,
+      "registeredByUserId": 2,
+      "mileage": 46400,
+      "recordedAt": "2026-09-01T18:00:00-05:00",
+      "createdAt": "2026-09-01T18:00:00-05:00"
+    },
+    {
+      "id": 2,
+      "vehicleId": 1,
+      "registeredByUserId": 2,
+      "mileage": 47000,
+      "recordedAt": "2026-09-15T18:00:00-05:00",
+      "createdAt": "2026-09-15T18:00:00-05:00"
+    },
+    {
+      "id": 3,
+      "vehicleId": 1,
+      "registeredByUserId": 2,
+      "mileage": 47750,
+      "recordedAt": "2026-10-01T18:00:00-05:00",
+      "createdAt": "2026-10-01T18:00:00-05:00"
+    },
+    {
+      "id": 4,
+      "vehicleId": 1,
+      "registeredByUserId": 2,
+      "mileage": 48200,
+      "recordedAt": "2026-10-07T18:00:00-05:00",
+      "createdAt": "2026-10-07T18:00:00-05:00"
+    },
+    {
+      "id": 5,
+      "vehicleId": 2,
+      "registeredByUserId": 3,
+      "mileage": 59700,
+      "recordedAt": "2026-09-01T18:00:00-05:00",
+      "createdAt": "2026-09-01T18:00:00-05:00"
+    },
+    {
+      "id": 6,
+      "vehicleId": 2,
+      "registeredByUserId": 3,
+      "mileage": 60300,
+      "recordedAt": "2026-09-15T18:00:00-05:00",
+      "createdAt": "2026-09-15T18:00:00-05:00"
+    },
+    {
+      "id": 7,
+      "vehicleId": 2,
+      "registeredByUserId": 3,
+      "mileage": 61050,
+      "recordedAt": "2026-10-01T18:00:00-05:00",
+      "createdAt": "2026-10-01T18:00:00-05:00"
+    },
+    {
+      "id": 8,
+      "vehicleId": 2,
+      "registeredByUserId": 3,
+      "mileage": 61500,
+      "recordedAt": "2026-10-07T18:00:00-05:00",
+      "createdAt": "2026-10-07T18:00:00-05:00"
+    },
+    {
+      "id": 9,
+      "vehicleId": 3,
+      "registeredByUserId": 4,
+      "mileage": 25600,
+      "recordedAt": "2026-09-01T18:00:00-05:00",
+      "createdAt": "2026-09-01T18:00:00-05:00"
+    },
+    {
+      "id": 10,
+      "vehicleId": 3,
+      "registeredByUserId": 4,
+      "mileage": 26200,
+      "recordedAt": "2026-09-15T18:00:00-05:00",
+      "createdAt": "2026-09-15T18:00:00-05:00"
+    },
+    {
+      "id": 11,
+      "vehicleId": 3,
+      "registeredByUserId": 4,
+      "mileage": 26950,
+      "recordedAt": "2026-10-01T18:00:00-05:00",
+      "createdAt": "2026-10-01T18:00:00-05:00"
+    },
+    {
+      "id": 12,
+      "vehicleId": 3,
+      "registeredByUserId": 4,
+      "mileage": 27400,
+      "recordedAt": "2026-10-07T18:00:00-05:00",
+      "createdAt": "2026-10-07T18:00:00-05:00"
+    },
+    {
+      "id": 13,
+      "vehicleId": 4,
+      "registeredByUserId": 2,
+      "mileage": 87100,
+      "recordedAt": "2026-09-01T18:00:00-05:00",
+      "createdAt": "2026-09-01T18:00:00-05:00"
+    },
+    {
+      "id": 14,
+      "vehicleId": 4,
+      "registeredByUserId": 2,
+      "mileage": 87700,
+      "recordedAt": "2026-09-15T18:00:00-05:00",
+      "createdAt": "2026-09-15T18:00:00-05:00"
+    },
+    {
+      "id": 15,
+      "vehicleId": 4,
+      "registeredByUserId": 2,
+      "mileage": 88450,
+      "recordedAt": "2026-10-01T18:00:00-05:00",
+      "createdAt": "2026-10-01T18:00:00-05:00"
+    },
+    {
+      "id": 16,
+      "vehicleId": 4,
+      "registeredByUserId": 2,
+      "mileage": 88900,
+      "recordedAt": "2026-10-07T18:00:00-05:00",
+      "createdAt": "2026-10-07T18:00:00-05:00"
+    },
+    {
+      "id": 17,
+      "vehicleId": 5,
+      "registeredByUserId": 3,
+      "mileage": 41800,
+      "recordedAt": "2026-09-01T18:00:00-05:00",
+      "createdAt": "2026-09-01T18:00:00-05:00"
+    },
+    {
+      "id": 18,
+      "vehicleId": 5,
+      "registeredByUserId": 3,
+      "mileage": 42400,
+      "recordedAt": "2026-09-15T18:00:00-05:00",
+      "createdAt": "2026-09-15T18:00:00-05:00"
+    },
+    {
+      "id": 19,
+      "vehicleId": 5,
+      "registeredByUserId": 3,
+      "mileage": 43150,
+      "recordedAt": "2026-10-01T18:00:00-05:00",
+      "createdAt": "2026-10-01T18:00:00-05:00"
+    },
+    {
+      "id": 20,
+      "vehicleId": 5,
+      "registeredByUserId": 3,
+      "mileage": 43600,
+      "recordedAt": "2026-10-07T18:00:00-05:00",
+      "createdAt": "2026-10-07T18:00:00-05:00"
+    },
+    {
+      "id": 21,
+      "vehicleId": 6,
+      "registeredByUserId": 4,
+      "mileage": 53900,
+      "recordedAt": "2026-09-01T18:00:00-05:00",
+      "createdAt": "2026-09-01T18:00:00-05:00"
+    },
+    {
+      "id": 22,
+      "vehicleId": 6,
+      "registeredByUserId": 4,
+      "mileage": 54500,
+      "recordedAt": "2026-09-15T18:00:00-05:00",
+      "createdAt": "2026-09-15T18:00:00-05:00"
+    },
+    {
+      "id": 23,
+      "vehicleId": 6,
+      "registeredByUserId": 4,
+      "mileage": 55250,
+      "recordedAt": "2026-10-01T18:00:00-05:00",
+      "createdAt": "2026-10-01T18:00:00-05:00"
+    },
+    {
+      "id": 24,
+      "vehicleId": 6,
+      "registeredByUserId": 4,
+      "mileage": 55700,
+      "recordedAt": "2026-10-07T18:00:00-05:00",
+      "createdAt": "2026-10-07T18:00:00-05:00"
+    },
+    {
+      "id": 25,
+      "vehicleId": 7,
+      "registeredByUserId": 2,
+      "mileage": 71100,
+      "recordedAt": "2026-09-01T18:00:00-05:00",
+      "createdAt": "2026-09-01T18:00:00-05:00"
+    },
+    {
+      "id": 26,
+      "vehicleId": 7,
+      "registeredByUserId": 2,
+      "mileage": 71700,
+      "recordedAt": "2026-09-15T18:00:00-05:00",
+      "createdAt": "2026-09-15T18:00:00-05:00"
+    },
+    {
+      "id": 27,
+      "vehicleId": 7,
+      "registeredByUserId": 2,
+      "mileage": 72450,
+      "recordedAt": "2026-10-01T18:00:00-05:00",
+      "createdAt": "2026-10-01T18:00:00-05:00"
+    },
+    {
+      "id": 28,
+      "vehicleId": 7,
+      "registeredByUserId": 2,
+      "mileage": 72900,
+      "recordedAt": "2026-10-07T18:00:00-05:00",
+      "createdAt": "2026-10-07T18:00:00-05:00"
+    },
+    {
+      "id": 29,
+      "vehicleId": 8,
+      "registeredByUserId": 3,
+      "mileage": 17100,
+      "recordedAt": "2026-09-01T18:00:00-05:00",
+      "createdAt": "2026-09-01T18:00:00-05:00"
+    },
+    {
+      "id": 30,
+      "vehicleId": 8,
+      "registeredByUserId": 3,
+      "mileage": 17700,
+      "recordedAt": "2026-09-15T18:00:00-05:00",
+      "createdAt": "2026-09-15T18:00:00-05:00"
+    },
+    {
+      "id": 31,
+      "vehicleId": 8,
+      "registeredByUserId": 3,
+      "mileage": 18450,
+      "recordedAt": "2026-10-01T18:00:00-05:00",
+      "createdAt": "2026-10-01T18:00:00-05:00"
+    },
+    {
+      "id": 32,
+      "vehicleId": 8,
+      "registeredByUserId": 3,
+      "mileage": 18900,
+      "recordedAt": "2026-10-07T18:00:00-05:00",
+      "createdAt": "2026-10-07T18:00:00-05:00"
+    },
+    {
+      "id": 33,
+      "vehicleId": 9,
+      "registeredByUserId": 4,
+      "mileage": 48600,
+      "recordedAt": "2026-09-01T18:00:00-05:00",
+      "createdAt": "2026-09-01T18:00:00-05:00"
+    },
+    {
+      "id": 34,
+      "vehicleId": 9,
+      "registeredByUserId": 4,
+      "mileage": 49200,
+      "recordedAt": "2026-09-15T18:00:00-05:00",
+      "createdAt": "2026-09-15T18:00:00-05:00"
+    },
+    {
+      "id": 35,
+      "vehicleId": 9,
+      "registeredByUserId": 4,
+      "mileage": 49950,
+      "recordedAt": "2026-10-01T18:00:00-05:00",
+      "createdAt": "2026-10-01T18:00:00-05:00"
+    },
+    {
+      "id": 36,
+      "vehicleId": 9,
+      "registeredByUserId": 4,
+      "mileage": 50400,
+      "recordedAt": "2026-10-07T18:00:00-05:00",
+      "createdAt": "2026-10-07T18:00:00-05:00"
+    },
+    {
+      "id": 37,
+      "vehicleId": 10,
+      "registeredByUserId": 2,
+      "mileage": 64400,
+      "recordedAt": "2026-09-01T18:00:00-05:00",
+      "createdAt": "2026-09-01T18:00:00-05:00"
+    },
+    {
+      "id": 38,
+      "vehicleId": 10,
+      "registeredByUserId": 2,
+      "mileage": 65000,
+      "recordedAt": "2026-09-15T18:00:00-05:00",
+      "createdAt": "2026-09-15T18:00:00-05:00"
+    },
+    {
+      "id": 39,
+      "vehicleId": 10,
+      "registeredByUserId": 2,
+      "mileage": 65750,
+      "recordedAt": "2026-10-01T18:00:00-05:00",
+      "createdAt": "2026-10-01T18:00:00-05:00"
+    },
+    {
+      "id": 40,
+      "vehicleId": 10,
+      "registeredByUserId": 2,
+      "mileage": 66200,
+      "recordedAt": "2026-10-07T18:00:00-05:00",
+      "createdAt": "2026-10-07T18:00:00-05:00"
+    },
+    {
+      "id": 41,
+      "vehicleId": 11,
+      "registeredByUserId": 3,
+      "mileage": 20300,
+      "recordedAt": "2026-09-01T18:00:00-05:00",
+      "createdAt": "2026-09-01T18:00:00-05:00"
+    },
+    {
+      "id": 42,
+      "vehicleId": 11,
+      "registeredByUserId": 3,
+      "mileage": 20900,
+      "recordedAt": "2026-09-15T18:00:00-05:00",
+      "createdAt": "2026-09-15T18:00:00-05:00"
+    },
+    {
+      "id": 43,
+      "vehicleId": 11,
+      "registeredByUserId": 3,
+      "mileage": 21650,
+      "recordedAt": "2026-10-01T18:00:00-05:00",
+      "createdAt": "2026-10-01T18:00:00-05:00"
+    },
+    {
+      "id": 44,
+      "vehicleId": 11,
+      "registeredByUserId": 3,
+      "mileage": 22100,
+      "recordedAt": "2026-10-07T18:00:00-05:00",
+      "createdAt": "2026-10-07T18:00:00-05:00"
+    },
+    {
+      "id": 45,
+      "vehicleId": 12,
+      "registeredByUserId": 4,
+      "mileage": 92700,
+      "recordedAt": "2026-09-01T18:00:00-05:00",
+      "createdAt": "2026-09-01T18:00:00-05:00"
+    },
+    {
+      "id": 46,
+      "vehicleId": 12,
+      "registeredByUserId": 4,
+      "mileage": 93300,
+      "recordedAt": "2026-09-15T18:00:00-05:00",
+      "createdAt": "2026-09-15T18:00:00-05:00"
+    },
+    {
+      "id": 47,
+      "vehicleId": 12,
+      "registeredByUserId": 4,
+      "mileage": 94050,
+      "recordedAt": "2026-10-01T18:00:00-05:00",
+      "createdAt": "2026-10-01T18:00:00-05:00"
+    },
+    {
+      "id": 48,
+      "vehicleId": 12,
+      "registeredByUserId": 4,
+      "mileage": 94500,
+      "recordedAt": "2026-10-07T18:00:00-05:00",
+      "createdAt": "2026-10-07T18:00:00-05:00"
+    }
+  ],
+  "fuelRecords": [
+    {
+      "id": 1,
+      "vehicleId": 1,
+      "registeredByUserId": 2,
+      "mileage": 47150,
+      "liters": 39.8,
+      "totalCost": 215.2,
+      "fueledAt": "2026-09-18T17:30:00-05:00",
+      "createdAt": "2026-09-18T17:30:00-05:00"
+    },
+    {
+      "id": 2,
+      "vehicleId": 1,
+      "registeredByUserId": 2,
+      "mileage": 47650,
+      "liters": 42.5,
+      "totalCost": 229.7,
+      "fueledAt": "2026-09-29T17:40:00-05:00",
+      "createdAt": "2026-09-29T17:40:00-05:00"
+    },
+    {
+      "id": 3,
+      "vehicleId": 1,
+      "registeredByUserId": 2,
+      "mileage": 48110,
+      "liters": 38.1,
+      "totalCost": 205.9,
+      "fueledAt": "2026-10-06T18:10:00-05:00",
+      "createdAt": "2026-10-06T18:10:00-05:00"
+    },
+    {
+      "id": 4,
+      "vehicleId": 2,
+      "registeredByUserId": 3,
+      "mileage": 60450,
+      "liters": 41.1,
+      "totalCost": 222.4,
+      "fueledAt": "2026-09-18T17:30:00-05:00",
+      "createdAt": "2026-09-18T17:30:00-05:00"
+    },
+    {
+      "id": 5,
+      "vehicleId": 2,
+      "registeredByUserId": 3,
+      "mileage": 60950,
+      "liters": 43.8,
+      "totalCost": 236.9,
+      "fueledAt": "2026-09-29T17:40:00-05:00",
+      "createdAt": "2026-09-29T17:40:00-05:00"
+    },
+    {
+      "id": 6,
+      "vehicleId": 2,
+      "registeredByUserId": 3,
+      "mileage": 61410,
+      "liters": 39.4,
+      "totalCost": 213.1,
+      "fueledAt": "2026-10-06T18:10:00-05:00",
+      "createdAt": "2026-10-06T18:10:00-05:00"
+    },
+    {
+      "id": 7,
+      "vehicleId": 3,
+      "registeredByUserId": 4,
+      "mileage": 26350,
+      "liters": 42.4,
+      "totalCost": 229.6,
+      "fueledAt": "2026-09-18T17:30:00-05:00",
+      "createdAt": "2026-09-18T17:30:00-05:00"
+    },
+    {
+      "id": 8,
+      "vehicleId": 3,
+      "registeredByUserId": 4,
+      "mileage": 26850,
+      "liters": 45.1,
+      "totalCost": 244.1,
+      "fueledAt": "2026-09-29T17:40:00-05:00",
+      "createdAt": "2026-09-29T17:40:00-05:00"
+    },
+    {
+      "id": 9,
+      "vehicleId": 3,
+      "registeredByUserId": 4,
+      "mileage": 27310,
+      "liters": 40.7,
+      "totalCost": 220.3,
+      "fueledAt": "2026-10-06T18:10:00-05:00",
+      "createdAt": "2026-10-06T18:10:00-05:00"
+    },
+    {
+      "id": 10,
+      "vehicleId": 4,
+      "registeredByUserId": 2,
+      "mileage": 87850,
+      "liters": 38.5,
+      "totalCost": 208,
+      "fueledAt": "2026-09-18T17:30:00-05:00",
+      "createdAt": "2026-09-18T17:30:00-05:00"
+    },
+    {
+      "id": 11,
+      "vehicleId": 4,
+      "registeredByUserId": 2,
+      "mileage": 88350,
+      "liters": 41.2,
+      "totalCost": 222.5,
+      "fueledAt": "2026-09-29T17:40:00-05:00",
+      "createdAt": "2026-09-29T17:40:00-05:00"
+    },
+    {
+      "id": 12,
+      "vehicleId": 4,
+      "registeredByUserId": 2,
+      "mileage": 88810,
+      "liters": 36.8,
+      "totalCost": 198.7,
+      "fueledAt": "2026-10-06T18:10:00-05:00",
+      "createdAt": "2026-10-06T18:10:00-05:00"
+    },
+    {
+      "id": 13,
+      "vehicleId": 5,
+      "registeredByUserId": 3,
+      "mileage": 42550,
+      "liters": 39.8,
+      "totalCost": 215.2,
+      "fueledAt": "2026-09-18T17:30:00-05:00",
+      "createdAt": "2026-09-18T17:30:00-05:00"
+    },
+    {
+      "id": 14,
+      "vehicleId": 5,
+      "registeredByUserId": 3,
+      "mileage": 43050,
+      "liters": 42.5,
+      "totalCost": 229.7,
+      "fueledAt": "2026-09-29T17:40:00-05:00",
+      "createdAt": "2026-09-29T17:40:00-05:00"
+    },
+    {
+      "id": 15,
+      "vehicleId": 5,
+      "registeredByUserId": 3,
+      "mileage": 43510,
+      "liters": 38.1,
+      "totalCost": 205.9,
+      "fueledAt": "2026-10-06T18:10:00-05:00",
+      "createdAt": "2026-10-06T18:10:00-05:00"
+    },
+    {
+      "id": 16,
+      "vehicleId": 6,
+      "registeredByUserId": 4,
+      "mileage": 54650,
+      "liters": 41.1,
+      "totalCost": 222.4,
+      "fueledAt": "2026-09-18T17:30:00-05:00",
+      "createdAt": "2026-09-18T17:30:00-05:00"
+    },
+    {
+      "id": 17,
+      "vehicleId": 6,
+      "registeredByUserId": 4,
+      "mileage": 55150,
+      "liters": 43.8,
+      "totalCost": 236.9,
+      "fueledAt": "2026-09-29T17:40:00-05:00",
+      "createdAt": "2026-09-29T17:40:00-05:00"
+    },
+    {
+      "id": 18,
+      "vehicleId": 6,
+      "registeredByUserId": 4,
+      "mileage": 55610,
+      "liters": 39.4,
+      "totalCost": 213.1,
+      "fueledAt": "2026-10-06T18:10:00-05:00",
+      "createdAt": "2026-10-06T18:10:00-05:00"
+    },
+    {
+      "id": 19,
+      "vehicleId": 7,
+      "registeredByUserId": 2,
+      "mileage": 71850,
+      "liters": 42.4,
+      "totalCost": 229.6,
+      "fueledAt": "2026-09-18T17:30:00-05:00",
+      "createdAt": "2026-09-18T17:30:00-05:00"
+    },
+    {
+      "id": 20,
+      "vehicleId": 7,
+      "registeredByUserId": 2,
+      "mileage": 72350,
+      "liters": 45.1,
+      "totalCost": 244.1,
+      "fueledAt": "2026-09-29T17:40:00-05:00",
+      "createdAt": "2026-09-29T17:40:00-05:00"
+    },
+    {
+      "id": 21,
+      "vehicleId": 7,
+      "registeredByUserId": 2,
+      "mileage": 72810,
+      "liters": 40.7,
+      "totalCost": 220.3,
+      "fueledAt": "2026-10-06T18:10:00-05:00",
+      "createdAt": "2026-10-06T18:10:00-05:00"
+    },
+    {
+      "id": 22,
+      "vehicleId": 8,
+      "registeredByUserId": 3,
+      "mileage": 17850,
+      "liters": 38.5,
+      "totalCost": 208,
+      "fueledAt": "2026-09-18T17:30:00-05:00",
+      "createdAt": "2026-09-18T17:30:00-05:00"
+    },
+    {
+      "id": 23,
+      "vehicleId": 8,
+      "registeredByUserId": 3,
+      "mileage": 18350,
+      "liters": 41.2,
+      "totalCost": 222.5,
+      "fueledAt": "2026-09-29T17:40:00-05:00",
+      "createdAt": "2026-09-29T17:40:00-05:00"
+    },
+    {
+      "id": 24,
+      "vehicleId": 8,
+      "registeredByUserId": 3,
+      "mileage": 18810,
+      "liters": 36.8,
+      "totalCost": 198.7,
+      "fueledAt": "2026-10-06T18:10:00-05:00",
+      "createdAt": "2026-10-06T18:10:00-05:00"
+    },
+    {
+      "id": 25,
+      "vehicleId": 9,
+      "registeredByUserId": 4,
+      "mileage": 49350,
+      "liters": 39.8,
+      "totalCost": 215.2,
+      "fueledAt": "2026-09-18T17:30:00-05:00",
+      "createdAt": "2026-09-18T17:30:00-05:00"
+    },
+    {
+      "id": 26,
+      "vehicleId": 9,
+      "registeredByUserId": 4,
+      "mileage": 49850,
+      "liters": 42.5,
+      "totalCost": 229.7,
+      "fueledAt": "2026-09-29T17:40:00-05:00",
+      "createdAt": "2026-09-29T17:40:00-05:00"
+    },
+    {
+      "id": 27,
+      "vehicleId": 9,
+      "registeredByUserId": 4,
+      "mileage": 50310,
+      "liters": 38.1,
+      "totalCost": 205.9,
+      "fueledAt": "2026-10-06T18:10:00-05:00",
+      "createdAt": "2026-10-06T18:10:00-05:00"
+    },
+    {
+      "id": 28,
+      "vehicleId": 10,
+      "registeredByUserId": 2,
+      "mileage": 65150,
+      "liters": 41.1,
+      "totalCost": 222.4,
+      "fueledAt": "2026-09-18T17:30:00-05:00",
+      "createdAt": "2026-09-18T17:30:00-05:00"
+    },
+    {
+      "id": 29,
+      "vehicleId": 10,
+      "registeredByUserId": 2,
+      "mileage": 65650,
+      "liters": 43.8,
+      "totalCost": 236.9,
+      "fueledAt": "2026-09-29T17:40:00-05:00",
+      "createdAt": "2026-09-29T17:40:00-05:00"
+    },
+    {
+      "id": 30,
+      "vehicleId": 10,
+      "registeredByUserId": 2,
+      "mileage": 66110,
+      "liters": 39.4,
+      "totalCost": 213.1,
+      "fueledAt": "2026-10-06T18:10:00-05:00",
+      "createdAt": "2026-10-06T18:10:00-05:00"
+    },
+    {
+      "id": 31,
+      "vehicleId": 11,
+      "registeredByUserId": 3,
+      "mileage": 21050,
+      "liters": 42.4,
+      "totalCost": 229.6,
+      "fueledAt": "2026-09-18T17:30:00-05:00",
+      "createdAt": "2026-09-18T17:30:00-05:00"
+    },
+    {
+      "id": 32,
+      "vehicleId": 11,
+      "registeredByUserId": 3,
+      "mileage": 21550,
+      "liters": 45.1,
+      "totalCost": 244.1,
+      "fueledAt": "2026-09-29T17:40:00-05:00",
+      "createdAt": "2026-09-29T17:40:00-05:00"
+    },
+    {
+      "id": 33,
+      "vehicleId": 11,
+      "registeredByUserId": 3,
+      "mileage": 22010,
+      "liters": 40.7,
+      "totalCost": 220.3,
+      "fueledAt": "2026-10-06T18:10:00-05:00",
+      "createdAt": "2026-10-06T18:10:00-05:00"
+    },
+    {
+      "id": 34,
+      "vehicleId": 12,
+      "registeredByUserId": 4,
+      "mileage": 93450,
+      "liters": 38.5,
+      "totalCost": 208,
+      "fueledAt": "2026-09-18T17:30:00-05:00",
+      "createdAt": "2026-09-18T17:30:00-05:00"
+    },
+    {
+      "id": 35,
+      "vehicleId": 12,
+      "registeredByUserId": 4,
+      "mileage": 93950,
+      "liters": 41.2,
+      "totalCost": 222.5,
+      "fueledAt": "2026-09-29T17:40:00-05:00",
+      "createdAt": "2026-09-29T17:40:00-05:00"
+    },
+    {
+      "id": 36,
+      "vehicleId": 12,
+      "registeredByUserId": 4,
+      "mileage": 94410,
+      "liters": 36.8,
+      "totalCost": 198.7,
+      "fueledAt": "2026-10-06T18:10:00-05:00",
+      "createdAt": "2026-10-06T18:10:00-05:00"
+    }
+  ]
+}

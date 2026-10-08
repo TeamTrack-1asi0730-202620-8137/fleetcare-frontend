@@ -1,0 +1,4 @@
+node_modules
+dist
+coverage
+docs/reference/fleetcare-database-v2.graphql
