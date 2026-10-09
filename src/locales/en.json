@@ -108,7 +108,8 @@
     "evidence": "Evidence",
     "noEvidence": "No evidence registered yet",
     "fileUrl": "File path or URL",
-    "addEvidence": "Attach evidence"
+    "addEvidence": "Attach evidence",
+    "startReview": "Start review"
   },
   "maintenance": {
     "title": "Maintenance",
