@@ -104,7 +104,18 @@
     "resolved": "Resuelta",
     "resolution": "Resolución",
     "resolve": "Resolver incidencia",
-    "detail": "Detalle de incidencia"
+    "detail": "Detalle de incidencia",
+    "evidence": "Evidencia",
+    "noEvidence": "Aun no hay evidencia registrada",
+    "fileUrl": "Ruta o URL del archivo",
+    "addEvidence": "Adjuntar evidencia",
+    "startReview": "Poner en atención",
+    "reportedBy": "Reportada por",
+    "reportedAt": "Fecha de reporte",
+    "coordinates": "Coordenadas",
+    "resolvedAt": "Fecha de resolución",
+    "updatedAt": "Última actualización",
+    "evidenceUrl": "Ruta o URL del archivo"
   },
   "maintenance": {
     "title": "Mantenimiento",
