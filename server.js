@@ -1,16 +1,23 @@
-const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router('server/db.json')
-const middlewares = jsonServer.defaults()
-const routes = require('./server/routes.json')
+import jsonServer from 'json-server';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import fs from 'fs';
 
-server.use(middlewares)
-server.use(jsonServer.rewriter(routes))
-server.use(router)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// Render asigna el puerto automáticamente mediante variables de entorno
+const server = jsonServer.create();
+const router = jsonServer.router(path.join(__dirname, 'server/db.json'));
+const middlewares = jsonServer.defaults();
 
-const port = process.env.PORT || 3000
+// Leer el archivo de rutas dinámicamente usando el sistema de módulos
+const routes = JSON.parse(fs.readFileSync(path.join(__dirname, 'server/routes.json'), 'utf-8'));
+
+server.use(middlewares);
+server.use(jsonServer.rewriter(routes));
+server.use(router);
+
+const port = process.env.PORT || 3000;
 server.listen(port, () => {
-  console.log('JSON Server está corriendo en el puerto ' + port)
-})
+  console.log('JSON Server está corriendo en el puerto ' + port);
+});
