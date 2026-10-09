@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 import { FleetManagementApi } from '../infrastructure/fleet-management-api.js'
 import { VehicleAssembler } from '../infrastructure/vehicle.assembler.js'
 const api = new FleetManagementApi()
+
 export const useFleetManagementStore = defineStore('fleet-management', () => {
   const vehicles = ref([])
   const loading = ref(false)
