@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { MaintenanceManagementApi } from '../infrastructure/maintenance-management-api.js'
 import { MaintenancePlanAssembler } from '../infrastructure/maintenance-plan.assembler.js'
 import { MaintenanceRecordAssembler } from '../infrastructure/maintenance-record.assembler.js'
+import { MaintenancePartAssembler } from '../infrastructure/maintenance-part.assembler.js'
 const api = new MaintenanceManagementApi()
 export const useMaintenanceManagementStore = defineStore('maintenance-management', () => {
   const plans = ref([]),
@@ -11,10 +12,39 @@ export const useMaintenanceManagementStore = defineStore('maintenance-management
   async function fetchAll() {
     loading.value = true
     try {
-      plans.value = MaintenancePlanAssembler.toEntities(await api.getPlans())
-      records.value = MaintenanceRecordAssembler.toEntities(await api.getRecords())
+      const [p, r, parts] = await Promise.all([api.getPlans(), api.getRecords(), api.getParts()])
+      plans.value = MaintenancePlanAssembler.toEntities(p)
+      records.value = MaintenanceRecordAssembler.toEntities(
+        r,
+        MaintenancePartAssembler.toEntities(parts)
+      ).sort((a, b) => String(b.performedDate).localeCompare(String(a.performedDate)))
     } finally {
       loading.value = false
+    }
+  }
+  async function getRecord(id) {
+    const local = records.value.find((x) => String(x.id) === String(id))
+    if (local) return local
+    try {
+      const [r, parts] = await Promise.all([
+        api.getRecord(id),
+        api.getParts({ maintenanceRecordId: id })
+      ])
+      return MaintenanceRecordAssembler.toEntity(r.data, MaintenancePartAssembler.toEntities(parts))
+    } catch (e) {
+      if (e.response?.status === 404) return null
+      throw e
+    }
+  }
+  async function getPlan(id) {
+    if (!id) return null
+    const local = plans.value.find((x) => String(x.id) === String(id))
+    if (local) return local
+    try {
+      return MaintenancePlanAssembler.toEntity((await api.getPlan(id)).data)
+    } catch (e) {
+      if (e.response?.status === 404) return null
+      throw e
     }
   }
   async function savePlan(r) {
@@ -41,13 +71,17 @@ export const useMaintenanceManagementStore = defineStore('maintenance-management
     return e
   }
   async function addRecord(r, parts = []) {
-    const e = MaintenanceRecordAssembler.toEntity(
-      (await api.createRecord({ ...r, createdAt: new Date().toISOString() })).data
-    )
-    records.value.unshift(e)
+    const created = (await api.createRecord({ ...r, createdAt: new Date().toISOString() })).data
+    const savedParts = []
     for (const p of parts) {
-      await api.createPart({ ...p, maintenanceRecordId: e.id })
+      savedParts.push(
+        MaintenancePartAssembler.toEntity(
+          (await api.createPart({ ...p, maintenanceRecordId: created.id })).data
+        )
+      )
     }
+    const e = MaintenanceRecordAssembler.toEntity(created, savedParts)
+    records.value.unshift(e)
     if (e.maintenancePlanId) {
       await api.patchPlan(e.maintenancePlanId, {
         status: 'completed',
@@ -58,5 +92,5 @@ export const useMaintenanceManagementStore = defineStore('maintenance-management
     }
     return e
   }
-  return { plans, records, loading, fetchAll, savePlan, addRecord }
+  return { plans, records, loading, fetchAll, getRecord, getPlan, savePlan, addRecord }
 })
