@@ -12,7 +12,8 @@
     "format:check": "prettier --check .",
     "postinstall": "prettier --write .",
     "verify": "npm run static:check && npm run format:check && npm run build",
-    "static:check": "node scripts-static-check.mjs"
+    "static:check": "node scripts-static-check.mjs",
+    "start": "node server.js"
   },
   "dependencies": {
     "@primeuix/themes": "^2.0.3",
