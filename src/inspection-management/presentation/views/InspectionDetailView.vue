@@ -25,7 +25,7 @@
           </div>
           <div>
             <span>{{ t('common.date') }}</span
-            ><strong>{{ new Date(inspection.inspectionDate).toLocaleString() }}</strong>
+            ><strong>{{ fmtDate(inspection.inspectionDate) }}</strong>
           </div>
           <div>
             <span>{{ t('common.status') }}</span
@@ -63,6 +63,7 @@ const { t } = useI18n({ useScope: 'global' }),
   store = useInspectionManagementStore(),
   inspection = ref(null),
   results = ref([])
+const fmtDate = (v) => (v ? new Date(v).toLocaleString() : '—')
 onMounted(async () => {
   inspection.value = await store.getInspection(route.params.id)
   results.value = await store.getResults(route.params.id)
