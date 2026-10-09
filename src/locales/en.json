@@ -109,7 +109,13 @@
     "noEvidence": "No evidence registered yet",
     "fileUrl": "File path or URL",
     "addEvidence": "Attach evidence",
-    "startReview": "Start review"
+    "startReview": "Start review",
+    "reportedBy": "Reported by",
+    "reportedAt": "Reported at",
+    "coordinates": "Coordinates",
+    "resolvedAt": "Resolved at",
+    "updatedAt": "Last updated",
+    "evidenceUrl": "File path or URL"
   },
   "maintenance": {
     "title": "Maintenance",
