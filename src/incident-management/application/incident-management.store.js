@@ -2,10 +2,13 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { IncidentManagementApi } from '../infrastructure/incident-management-api.js'
 import { IncidentAssembler } from '../infrastructure/incident.assembler.js'
+import {IncidentEvidenceAssembler} from '../infrastructure/incident-evidence.assembler.js'
+
 const api = new IncidentManagementApi()
 export const useIncidentManagementStore = defineStore('incident-management', () => {
   const incidents = ref([]),
-    loading = ref(false)
+    loading = ref(false),
+    evidences = ref([])
   async function fetchIncidents() {
     loading.value = true
     try {
@@ -57,5 +60,15 @@ export const useIncidentManagementStore = defineStore('incident-management', () 
     if (i >= 0) incidents.value[i] = e
     return e
   }
-  return { incidents, loading, fetchIncidents, getIncident, saveIncident, resolveIncident }
+  async function fetchEvidences(incidentId) {
+    evidences.value = IncidentEvidenceAssembler.toEntities(await api.getEvidences({ incidentId }))
+  }
+  async function addEvidence(r) {
+    const e = IncidentEvidenceAssembler.toEntity((
+      (await api.createEvidence({...r, createdAt: new Date().toISOString()})).data
+    ))
+    evidences.value.push(e)
+    return e
+  }
+  return { incidents, loading, evidences, fetchIncidents, getIncident, saveIncident, resolveIncident, fetchEvidences, addEvidence }
 })
