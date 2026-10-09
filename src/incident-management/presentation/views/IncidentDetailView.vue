@@ -60,6 +60,17 @@
           </div>
         </div>
         <div
+          v-if="incident.status === 'reported'"
+          style="margin: 1.2rem 0"
+        >
+          <Button
+            icon="pi pi-play"
+            severity="warn"
+            :label="t('incident.startReview')"
+            @click="startReview"
+          />
+        </div>
+        <div
           v-if="incident.status !== 'resolved'"
           class="resolution-box"
         >
@@ -70,6 +81,7 @@
           /><Button
             :label="t('incident.resolve')"
             icon="pi pi-check"
+            :disabled="!resolution.trim()"
             @click="resolve"
           />
         </div>
@@ -137,6 +149,9 @@ onMounted(async () => {
 async function resolve() {
   if (!resolution.value.trim()) return
   incident.value = await store.resolveIncident(incident.value.id, resolution.value.trim())
+}
+async function startReview() {
+  incident.value = await store.changeStatus(incident.value.id, 'under_review')
 }
 
 async function attach() {
