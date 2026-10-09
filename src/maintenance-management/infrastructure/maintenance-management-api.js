@@ -28,6 +28,9 @@ export class MaintenanceManagementApi extends BaseApi {
   getRecords(p = {}) {
     return this.#records.getAll(p)
   }
+  getRecord(id) {
+    return this.#records.getById(id)
+  }
   createRecord(r) {
     return this.#records.create(r)
   }
