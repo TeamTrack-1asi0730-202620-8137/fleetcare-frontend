@@ -104,7 +104,11 @@
     "resolved": "Resolved",
     "resolution": "Resolution",
     "resolve": "Resolve incident",
-    "detail": "Incident details"
+    "detail": "Incident details",
+    "evidence": "Evidence",
+    "noEvidence": "No evidence registered yet",
+    "fileUrl": "File path or URL",
+    "addEvidence": "Attach evidence"
   },
   "maintenance": {
     "title": "Maintenance",
