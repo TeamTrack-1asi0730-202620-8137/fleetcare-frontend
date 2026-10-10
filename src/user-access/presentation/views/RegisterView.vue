@@ -99,8 +99,16 @@ async function submit() {
     await auth.registerFleetManager({ ...form })
     await router.push('/login')
   } catch (error) {
+    
+    //severity.value = 'error'
+    //message.value = error.message
+
     severity.value = 'error'
-    message.value = error.message
+    if (error.message === 'EMAIL_ALREADY_EXISTS') {
+    message.value = 'Este correo ya se encuentra registrado.'
+    } else {
+    message.value = error.message || 'Ocurrió un error al registrarse.'
+    }
   } finally {
     loading.value = false
   }
