@@ -4,8 +4,9 @@
     @submit.prevent="submit"
   >
     <div>
-      <label>{{ t('common.vehicle') }}</label
+      <label for="fuel-vehicle">{{ t('common.vehicle') }}</label
       ><Select
+        input-id="fuel-vehicle"
         v-model="form.vehicleId"
         :options="vehicles"
         option-label="display"
@@ -14,8 +15,9 @@
       />
     </div>
     <div>
-      <label>{{ t('common.driver') }}</label
+      <label for="fuel-driver">{{ t('common.driver') }}</label
       ><Select
+        input-id="fuel-driver"
         v-model="form.registeredByUserId"
         :options="drivers"
         option-label="display"
@@ -24,16 +26,18 @@
       />
     </div>
     <div>
-      <label>{{ t('operations.mileage') }}</label
+      <label for="fuel-mileage">{{ t('operations.mileage') }}</label
       ><InputNumber
+        input-id="fuel-mileage"
         v-model="form.mileage"
         :min="0"
         required
       />
     </div>
     <div>
-      <label>{{ t('operations.liters') }}</label
+      <label for="fuel-liters">{{ t('operations.liters') }}</label
       ><InputNumber
+        input-id="fuel-liters"
         v-model="form.liters"
         :min="0"
         :min-fraction-digits="1"
@@ -41,8 +45,9 @@
       />
     </div>
     <div>
-      <label>{{ t('operations.totalCost') }}</label
+      <label for="fuel-total-cost">{{ t('operations.totalCost') }}</label
       ><InputNumber
+        input-id="fuel-total-cost"
         v-model="form.totalCost"
         mode="currency"
         currency="PEN"
@@ -51,8 +56,9 @@
       />
     </div>
     <div>
-      <label>{{ t('operations.fueledAt') }}</label
+      <label for="fuel-date">{{ t('operations.fueledAt') }}</label
       ><DatePicker
+        input-id="fuel-date"
         v-model="date"
         show-time
         hour-format="24"

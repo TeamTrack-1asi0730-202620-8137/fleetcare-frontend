@@ -4,8 +4,9 @@
     @submit.prevent="submit"
   >
     <div>
-      <label>{{ t('common.vehicle') }}</label
+      <label for="mileage-vehicle">{{ t('common.vehicle') }}</label
       ><Select
+        input-id="mileage-vehicle"
         v-model="form.vehicleId"
         :options="vehicles"
         option-label="display"
@@ -14,8 +15,9 @@
       />
     </div>
     <div>
-      <label>{{ t('common.driver') }}</label
+      <label for="mileage-driver">{{ t('common.driver') }}</label
       ><Select
+        input-id="mileage-driver"
         v-model="form.registeredByUserId"
         :options="drivers"
         option-label="display"
@@ -24,16 +26,18 @@
       />
     </div>
     <div>
-      <label>{{ t('operations.mileage') }}</label
+      <label for="mileage-value">{{ t('operations.mileage') }}</label
       ><InputNumber
+        input-id="mileage-value"
         v-model="form.mileage"
         :min="0"
         required
       />
     </div>
     <div>
-      <label>{{ t('operations.recordedAt') }}</label
+      <label for="mileage-date">{{ t('operations.recordedAt') }}</label
       ><DatePicker
+        input-id="mileage-date"
         v-model="date"
         show-time
         hour-format="24"
