@@ -34,15 +34,15 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const server = jsonServer.create();
-const router = jsonServer.router(path.join(__dirname, 'server/db.json'));
+const dbPath = path.join(__dirname, 'server/db.json');
+const router = jsonServer.router(dbPath);
 const middlewares = jsonServer.defaults();
 
-// Leer el archivo de rutas dinámicamente
 const routes = JSON.parse(fs.readFileSync(path.join(__dirname, 'server/routes.json'), 'utf-8'));
 
 server.use(middlewares);
 
-// 1. Habilitar CORS globalmente para evitar bloqueos en el navegador del CRM
+// Habilitar CORS globalmente
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
@@ -52,18 +52,20 @@ server.use((req, res, next) => {
 
 server.use(jsonServer.rewriter(routes));
 
-// 2. Interceptar específicamente la respuesta de /vehicles para envolverla en "value"
-server.use((req, res, next) => {
-  if (req.method === 'GET' && req.path === '/vehicles') {
-    const originalJson = res.json.bind(res);
-    res.json = (data) => {
-      if (Array.isArray(data)) {
-        return originalJson({ value: data });
-      }
-      return originalJson(data);
-    };
+// Interceptamos la ruta /vehicles leyendo directamente el archivo db.json y envolviéndolo en "value"
+server.get('/vehicles', (req, res) => {
+  try {
+    const dbData = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+    // dbData.vehicles contiene tu arreglo plano original
+    const vehiclesArray = dbData.vehicles || [];
+    
+    // Respondemos exactamente con el formato que SAP Service Cloud Version 2 necesita
+    res.json({
+      value: vehiclesArray
+    });
+  } catch (error) {
+    res.status(500).json({ error: 'Error leyendo la base de datos' });
   }
-  next();
 });
 
 server.use(router);
