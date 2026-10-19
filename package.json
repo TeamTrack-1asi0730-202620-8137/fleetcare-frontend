@@ -18,6 +18,10 @@
   "dependencies": {
     "@primeuix/themes": "^2.0.3",
     "axios": "^1.16.0",
+    
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    
     "pinia": "^3.0.4",
     "primeflex": "^4.0.0",
     "primeicons": "^7.0.0",
