@@ -29,6 +29,8 @@ import jsonServer from 'json-server';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
+import cors from 'cors';
+import express from 'express';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -40,26 +42,22 @@ const middlewares = jsonServer.defaults();
 
 const routes = JSON.parse(fs.readFileSync(path.join(__dirname, 'server/routes.json'), 'utf-8'));
 
+// Habilitar CORS globalmente y permitir el token CSRF de SAP
+server.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'x-csrf-token', 'authorization']
+}));
+
 server.use(middlewares);
-
-// Habilitar CORS globalmente
-server.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  next();
-});
-
 server.use(jsonServer.rewriter(routes));
 
-// Interceptamos la ruta /vehicles leyendo directamente el archivo db.json y envolviéndolo en "value"
+// Ruta optimizada para /vehicles que devuelve la estructura { value: [...] } requerida por SAP
 server.get('/vehicles', (req, res) => {
   try {
     const dbData = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
-    // dbData.vehicles contiene tu arreglo plano original
     const vehiclesArray = dbData.vehicles || [];
     
-    // Respondemos exactamente con el formato que SAP Service Cloud Version 2 necesita
     res.json({
       value: vehiclesArray
     });
@@ -72,7 +70,7 @@ server.use(router);
 
 const port = process.env.PORT || 3000;
 server.listen(port, () => {
-  console.log('JSON Server está corriendo en el puerto ' + port);
+  console.log('Servidor corriendo en el puerto ' + port);
 });
 
 // Update 19.10.2026 - fin
