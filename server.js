@@ -42,7 +42,7 @@ const routes = JSON.parse(fs.readFileSync(path.join(__dirname, 'server/routes.js
 
 server.use(middlewares);
 
-// Middleware personalizado para habilitar CORS explícitamente en todas las respuestas
+// 1. Habilitar CORS globalmente para evitar bloqueos en el navegador del CRM
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
@@ -52,12 +52,11 @@ server.use((req, res, next) => {
 
 server.use(jsonServer.rewriter(routes));
 
-// Interceptar específicamente la respuesta de /vehicles para adaptarla a la estructura que exige SAP Service Cloud V2
+// 2. Interceptar específicamente la respuesta de /vehicles para envolverla en "value"
 server.use((req, res, next) => {
   if (req.method === 'GET' && req.path === '/vehicles') {
     const originalJson = res.json.bind(res);
     res.json = (data) => {
-      // Si la data es un arreglo plano, lo envolvemos en el objeto { value: [...] } que requiere SAP
       if (Array.isArray(data)) {
         return originalJson({ value: data });
       }
